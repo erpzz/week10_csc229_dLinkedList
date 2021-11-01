@@ -7,7 +7,7 @@ package com.mycompany.dllists_stacks_queues;
  */
 public class DoublyLinkedListDemoApp {
    public static void main(String[] args) {
-      LinkedList numList = new LinkedList();
+      DoublyLinkedList numList = new DoublyLinkedList();
       Node nodeA = new Node(14);
       Node nodeB = new Node(2);
       Node nodeC = new Node(20);

@@ -17,11 +17,11 @@ class Node {
    }
 }
 
-public class LinkedList {
+public class DoublyLinkedList {
    private Node head;
    private Node tail;
     
-   public LinkedList() {
+   public DoublyLinkedList() {
       head = null;
       tail = null;
    }
