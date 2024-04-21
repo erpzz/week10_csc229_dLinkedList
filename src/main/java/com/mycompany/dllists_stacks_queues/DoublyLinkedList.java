@@ -3,7 +3,7 @@ package com.mycompany.dllists_stacks_queues;
 
 /**
  *
- * @author MoaathAlrajab
+ * @author Eric Paiz
  */
 class Node {
    public int data;
@@ -25,7 +25,46 @@ public class DoublyLinkedList {
       head = null;
       tail = null;
    }
-    
+   // This takes the size of the doublylinked list to create a new array of the same size.
+   // The head is then assigned as the current node, as well as the index is assigned to 0 (like the head)
+   // Then it loops through adding the current node to the current array index, as long as the current node isn't null
+
+   public int[] toArray(){
+      int[] array = new int[size];
+      Node current = head;
+      int index = 0;
+      while (current != null){
+         array[index++] = current.data;
+         current = current.next;
+      }
+      return array;
+   }
+   // This takes the object you want the index for, starts the count at the head of the D-linked list,
+   // assigns the index at 0, and loops through incrementing the index while the current object isn't null
+   // until you reach the position of the arrObject, at which point you should have the current index.
+   public int indexOf(int arrObj) {
+      Node current = head;
+      int index = 0;
+      while (current != null){
+         if (current.data == arrObj){
+            return index;
+         }
+         index++;
+         current = current.next;
+      }
+      return -1;
+   }
+
+   public int sumOf(int m) {
+      Node current = tail;
+      int sum = 0;
+      for (int i = 0; i < m; i++){
+         sum += current.data;
+         current = current.previous;
+      }
+      return sum;
+   }
+
    public void append(Node newNode) {
       if (head == null) {
          head = newNode;
@@ -37,7 +76,6 @@ public class DoublyLinkedList {
          tail = newNode;
       }
    }
-   
    public void prepend(Node newNode) {
       if (head == null) {
          head = newNode;
