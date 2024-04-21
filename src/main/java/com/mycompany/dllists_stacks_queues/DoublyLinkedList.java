@@ -25,14 +25,21 @@ public class DoublyLinkedList {
       head = null;
       tail = null;
    }
-   // This takes the size of the doublylinked list to create a new array of the same size.
+   // This creates an array which starts off as empty
    // The head is then assigned as the current node, as well as the index is assigned to 0 (like the head)
    // Then it loops through adding the current node to the current array index, as long as the current node isn't null
 
    public int[] toArray(){
-      int[] array = new int[size];
+      int size = 0;
       Node current = head;
+      while (current != null){
+         size++;
+         current = current.next;
+      }
+
+      int[] array = new int[size];
       int index = 0;
+      current = head;
       while (current != null){
          array[index++] = current.data;
          current = current.next;
